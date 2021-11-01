@@ -16,6 +16,17 @@ const global = createGlobalStyle`
     margin: 0;
     background-color: #f7f9fd;
   }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: white;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #c4c4c4;
+  }
 `;
 
 export default global;
