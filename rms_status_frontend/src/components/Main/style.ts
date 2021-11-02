@@ -3,14 +3,14 @@ import styled, { css } from 'styled-components';
 export const Main = styled.div`
   width: 100%;
   min-width: 800px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 70px 0px;
 `;
 
 export const StatusBar = styled.div<{
-  isWorking: string;
+  status: string;
 }>`
   width: 800px;
   height: 60px;
@@ -35,23 +35,32 @@ export const StatusBar = styled.div<{
       cursor: pointer;
     }
     > img {
-      width: 14px;
-      height: 14px;
+      width: 15px;
+      height: 15px;
       cursor: pointer;
     }
   }
-  ${({ isWorking }) => css`
-    background-color: ${isWorking === '1' ? '#6dbe86' : isWorking === '2' ? '#F2BA58' : '#F25858'};
+  ${({ status }) => css`
+    background-color: ${status === 'green'
+      ? '#6dbe86'
+      : status === 'yellow'
+      ? '#F2BA58'
+      : '#F25858'};
   `}
 `;
 
-export const Api = styled.div`
+export const Status = styled.div<{
+  count: string;
+}>`
   width: 800px;
-  height: 470px;
+  ${({ count }) => css`
+    height: ${count === 'site' ? '307px' : '470px'};
+  `};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
 `;
 
 export const ApiTitle = styled.div`
@@ -79,7 +88,7 @@ export const ApiTitle = styled.div`
   }
 `;
 
-export const ApiStatus = styled.div`
+export const StatusContent = styled.div`
   width: 100%;
   height: 120px;
   background-color: #ffffff;
@@ -104,10 +113,14 @@ export const StatusTitle = styled.p`
   font-weight: bold;
 `;
 
-export const Status = styled.p`
+export const StatusText = styled.p<{
+  color: string;
+}>`
   font-size: 16px;
   font-weight: bold;
-  color: #72cc8e;
+  ${({ color }) => css`
+    color: ${color === 'green' ? '#6dbe86' : color === 'yellow' ? '#F2BA58' : '#F25858'};
+  `}
 `;
 
 export const BoxLine = styled.div`
@@ -119,8 +132,63 @@ export const BoxLine = styled.div`
   align-items: center;
 `;
 
-export const Box = styled.div`
+export const Box = styled.div<{ color: string }>`
   width: 16px;
   height: 50px;
   background-color: #72cc8e;
+  ${({ color }) => css`
+    background-color: ${color === 'green' ? '#6dbe86' : color === 'yellow' ? '#F2BA58' : '#F25858'};
+  `}
+`;
+
+export const ErrorNotice = styled.div`
+  width: 800px;
+  height: 300px;
+  background-color: #ffffff;
+  margin-top: 60px;
+  border: 1px solid #c4c4c4;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  > div > div:nth-last-of-type(1) {
+    border-bottom: none;
+  }
+  > div:nth-last-of-type(1) {
+    width: 100%;
+    height: 210px;
+    overflow-y: auto;
+  }
+`;
+
+export const ErrorNoticeTitle = styled.p<{ severity: string }>`
+  font-size: 22px;
+  font-weight: bold;
+  ${({ severity }) => css`
+    color: ${severity === 'yellow' ? '#F2BA58' : '#F25858'};
+  `}
+`;
+
+export const ErrorContent = styled.div`
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #c4c4c4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const ErrorTitle = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+`;
+
+export const ErrorDetail = styled.p`
+  font-size: 16px;
+`;
+
+export const Service = styled.p`
+  font-size: 14px;
+  color: #c4c4c4;
+  text-align: right;
 `;
