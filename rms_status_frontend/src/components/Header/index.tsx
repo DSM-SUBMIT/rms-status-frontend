@@ -17,7 +17,7 @@ const Header = () => {
         <div>
           {PAGE.map(data => {
             return (
-              <div>
+              <div key={data.id}>
                 <p key={data.id} data-id={data.id} onClick={textClickHandler}>
                   {data.content}
                 </p>
