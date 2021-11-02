@@ -1,6 +1,6 @@
 import { error } from '../../../../../models/error';
-import { currentOutageArrayType } from '../../../../../models/request/mainResponse';
-import { apiAndSiteObjectType } from '../../../../../models/request/mainResponse';
+import { currentOutageArrayType } from '../../../../../models/response/mainResponse';
+import { apiAndSiteObjectType } from '../../../../../models/response/mainResponse';
 
 interface MainState {
   status: string;
