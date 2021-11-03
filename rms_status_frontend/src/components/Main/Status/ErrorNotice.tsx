@@ -17,14 +17,8 @@ const ErrorNotice: FC<Props> = props => {
   const makeDate = (date: string) => {
     const postDate = new Date(date);
     return `${postDate.getFullYear()}.${('0' + (postDate.getMonth() + 1)).slice(-2)}.${(
-      '0' + postDate.getMonth()
-    ).slice(-2)}(${getPostDay(postDate.getDay())}) ${
-      ('0' + postDate.getHours()).slice(-2) +
-      ':' +
-      ('0' + postDate.getMinutes()).slice(-2) +
-      ':' +
-      ('0' + postDate.getSeconds()).slice(-2)
-    }`;
+      '0' + postDate.getDate()
+    ).slice(-2)}(${getPostDay(postDate.getDay())}) ${date.slice(11, 19)}`;
   };
 
   const post = useMemo(() => {
