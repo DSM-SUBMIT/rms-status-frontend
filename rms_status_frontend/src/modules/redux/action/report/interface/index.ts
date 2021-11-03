@@ -1,0 +1,5 @@
+export const INPUT = 'REPORT/INPUT';
+export const TEXTAREA = 'REPORT/TEXTAREA';
+export const REPORT = 'REPORT/REPORT';
+export const REPORT_SUCCESS = 'REPORT/REPORT_SUCCESS';
+export const REPORT_FAILURE = 'REPORT/REPORT_FAILURE';
