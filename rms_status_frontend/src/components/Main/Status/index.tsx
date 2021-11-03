@@ -50,7 +50,7 @@ const Status: FC<Props> = props => {
             <S.ArrorBox className='explain'>
               {apiOrSite === 'api'
                 ? 'API는 프로젝트 생성, 확인 등 사이트를 통해 할 수 있는 모든 작업을 책임집니다.'
-                : ''}
+                : 'Site 서버는 사용자가 보는 화면을 전송하는 역할을 책임집니다'}
             </S.ArrorBox>
           </div>
           <p>최근 30일간의 작동 현황</p>
