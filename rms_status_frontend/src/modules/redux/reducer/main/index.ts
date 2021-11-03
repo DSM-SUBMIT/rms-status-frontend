@@ -37,7 +37,7 @@ const initState: MainState = {
   isSuccessGetStatus: undefined,
 };
 
-const MainRouter = (state: MainState = initState, action: mainActionType): MainState => {
+const MainReducer = (state: MainState = initState, action: mainActionType): MainState => {
   switch (action.type) {
     case GET_STATUS:
       return {
@@ -63,4 +63,4 @@ const MainRouter = (state: MainState = initState, action: mainActionType): MainS
   }
 };
 
-export default MainRouter;
+export default MainReducer;
