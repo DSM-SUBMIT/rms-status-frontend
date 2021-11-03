@@ -46,7 +46,12 @@ const Status: FC<Props> = props => {
         <S.ApiTitle>
           <div>
             <p>{apiOrSite === 'api' ? 'APIs' : 'Sites'}</p>
-            <img src={help} alt='help' />
+            <img src={help} alt='help' id='menu' />
+            <S.ArrorBox className='explain'>
+              {apiOrSite === 'api'
+                ? 'API는 프로젝트 생성, 확인 등 사이트를 통해 할 수 있는 모든 작업을 책임집니다.'
+                : ''}
+            </S.ArrorBox>
           </div>
           <p>최근 30일간의 작동 현황</p>
         </S.ApiTitle>

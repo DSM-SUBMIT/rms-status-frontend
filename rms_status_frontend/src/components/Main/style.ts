@@ -74,18 +74,43 @@ export const ApiTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    span {
+      display: flex;
+      width: 200px;
+      padding: 2px 16px;
+      cursor: pointer;
+    }
     > p {
       font-size: 17px;
     }
     > img {
       width: 19px;
       height: 19px;
+      cursor: pointer;
+      :hover + .explain {
+        display: block;
+      }
     }
   }
   > p:last-child {
     font-size: 15px;
     color: #adadad;
   }
+`;
+
+export const ArrorBox = styled.p`
+  display: none;
+  width: max-content;
+  min-width: 100px;
+  position: absolute;
+  padding: 6px;
+  bottom: 22px;
+  left: 37px;
+  border-radius: 8px;
+  background: #c4c4c4;
+  color: #ffffff;
+  font-size: 10px !important;
 `;
 
 export const StatusContent = styled.div`
