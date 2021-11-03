@@ -44,4 +44,5 @@ export const Logo = styled.div`
   width: 30px;
   height: 30px;
   border: 1px solid #707070;
+  cursor: pointer;
 `;
