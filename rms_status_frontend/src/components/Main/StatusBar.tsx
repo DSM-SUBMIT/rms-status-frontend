@@ -1,6 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import * as S from './style';
 import { openSite } from '../../assets/header';
+import { useHistory } from 'react-router-dom';
 
 interface Props {
   status: string;
@@ -8,6 +9,7 @@ interface Props {
 
 const StatusBar: FC<Props> = props => {
   const { status } = props;
+  const history = useHistory();
 
   const title = useMemo(() => {
     if (status === 'green') return <p>모든 서비스가 정상적으로 작동중</p>;
@@ -15,13 +17,17 @@ const StatusBar: FC<Props> = props => {
     else return <p>일부 서비스를 이용할 수 없음</p>;
   }, [status]);
 
+  const reportClickHandler = () => {
+    history.push('/report');
+  };
+
   return (
     <div>
       <S.StatusBar status={status}>
         {title}
         <div>
-          <p>오류 제보하기</p>
-          <img src={openSite} alt='open_modal' />
+          <p onClick={reportClickHandler}>오류 제보하기</p>
+          <img src={openSite} alt='open_modal' onClick={reportClickHandler} />
         </div>
       </S.StatusBar>
     </div>
