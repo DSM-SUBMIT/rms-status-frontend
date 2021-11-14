@@ -40,9 +40,9 @@ export const HeaderContent = styled.div`
   }
 `;
 
-export const Logo = styled.div`
-  width: 30px;
-  height: 30px;
-  border: 1px solid #707070;
+export const Logo = styled.p`
   cursor: pointer;
+  color: #386bee;
+  font-size: 19px;
+  font-weight: bold;
 `;

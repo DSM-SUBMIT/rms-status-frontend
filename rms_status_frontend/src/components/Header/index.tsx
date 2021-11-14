@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <S.Header>
       <S.HeaderContent>
-        <S.Logo onClick={logoClickHandler} />
+        <S.Logo onClick={logoClickHandler}>RMS</S.Logo>
         <div>
           {PAGE.map(data => {
             return (
